@@ -1,6 +1,9 @@
+""" import libraries """
 from tkinter.filedialog import askopenfilename, asksaveasfile
 
+
 def open_file(window, text_edit):
+    """Open a file and display its content in the text editor."""
     filepath = askopenfilename(filetypes=[("Text Files", "*.txt")])
 
     if not filepath:
@@ -12,7 +15,9 @@ def open_file(window, text_edit):
         text_edit.insert("end", content)
     window.title(f"Open file: {filepath}")
 
+
 def save_file(window, text_edit):
+    """Save the content of the text editor to a file."""
     file = asksaveasfile(defaultextension=".txt", filetypes=[("Text Files", "*.txt")])
 
     if not file:
